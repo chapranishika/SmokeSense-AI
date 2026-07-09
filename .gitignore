@@ -1,0 +1,31 @@
+# Python virtual environment
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Node dependencies and build output
+frontend/node_modules/
+node_modules/
+frontend/dist/
+dist/
+
+# Environment files
+.env.local
+.env.*.local
+backend/.env.local
+
+# Databases
+*.db
+backend/data/*.db
+data/*.db
+data/smokesense.db
+
+# OS files
+.DS_Store
+Thumbs.db

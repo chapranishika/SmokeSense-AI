@@ -1,0 +1,5 @@
+# Only needed to RE-TRAIN the model via scripts/train_bayesian_lr.py.
+# Not required to run the API server (see requirements.txt).
+scikit-learn==1.5.2
+pandas==2.2.3
+torch==2.12.1
