@@ -155,15 +155,26 @@ Confusion Matrix: TN=11,101 · FP=711 · FN=1,024 · TP=7,164
 
 ---
 
-## Screens
+## Screenshots
 
-1. **Home** — Live Bayesian urge gauge (polls `/predict/live` every 30s), real weight feature bars, 24h timeline
-2. **Predict** — Interactive sliders → `/predict` POST → posterior output with CI
-3. **Tools** — Breathing exercise, craving diary (DB-backed), distraction games, Why I Quit (DB-backed checkable reasons), NRT tracker (DB-backed), savings calculator
-4. **AI** — conversational AI companion, proxied through the backend's `/ai/chat` (API key never reaches the browser)
-5. **Community** — Feed, progress (from `/stats/progress`), leaderboard
-6. **Research** — All report figures: model comparison, confusion matrix, ROC/PR, MAML trajectory, calibration curve, ELBO convergence, test cases, pipeline
-7. **Profile** — User settings, export progress, about
+Here is the visual walkthrough of the SmokeSense AI application screens:
+
+| 📱 Home / Dashboard | 🧠 Urge Predictor (Posterior Output) |
+| :---: | :---: |
+| ![Dashboard](screenshots/dashboard.png) | ![Urge Predictor](screenshots/predict.png) |
+
+| 💬 AI Companion | 🛠️ Tools & Interventions |
+| :---: | :---: |
+| ![AI Companion](screenshots/ai_companion.png) | ![Tools & Interventions](screenshots/tools.png) |
+
+| 🧘 4-7-8 Breathing Exercise | 🧩 distraction Games & Grounding |
+| :---: | :---: |
+| ![Breathe Exercise](screenshots/breathe.png) | ![Distraction Games](screenshots/games.png) |
+
+| 👥 Community Feed | ⚙️ Profile & Settings |
+| :---: | :---: |
+| ![Community Feed](screenshots/community.png) | ![Profile & Settings](screenshots/profile.png) |
+
 
 ---
 
