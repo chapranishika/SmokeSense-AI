@@ -14,8 +14,21 @@ export function useWearableWS() {
   useEffect(() => {
     if (!token || !user?.id) return
 
-    const proto = window.location.protocol === 'https:' ? 'wss' : 'ws'
-    const url = `${proto}://${window.location.host}/ws/wearable/${user.id}?token=${encodeURIComponent(token)}`
+    let backendHost = window.location.host
+    let proto = window.location.protocol === 'https:' ? 'wss' : 'ws'
+
+    const envUrl = import.meta.env.VITE_API_URL
+    if (envUrl) {
+      try {
+        const urlObj = new URL(envUrl)
+        backendHost = urlObj.host
+        proto = urlObj.protocol === 'https:' ? 'wss' : 'ws'
+      } catch (e) {
+        // Fallback if envUrl is not a full URL
+      }
+    }
+
+    const url = `${proto}://${backendHost}/ws/wearable/${user.id}?token=${encodeURIComponent(token)}`
 
     let ws
     try {

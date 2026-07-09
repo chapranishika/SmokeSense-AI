@@ -1,0 +1,26 @@
+# Ignore python virtual environment
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Ignore frontend node modules and builds
+frontend/node_modules/
+frontend/dist/
+node_modules/
+dist/
+
+# Ignore git repository and logs
+.git/
+.gitignore
+
+# Ignore local databases and config files
+data/smokesense.db
+backend/.env.local
+.env.local
+C:/

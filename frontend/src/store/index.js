@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-const API = '/api'
+const API = import.meta.env.VITE_API_URL || '/api'
 
 const headers = (token) => ({
   'Content-Type': 'application/json',
