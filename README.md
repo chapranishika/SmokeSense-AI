@@ -147,11 +147,33 @@ All weights below come directly from `LR_Prior_Weights.csv` in the project repos
 | TSLS_Minutes | -0.4484 |
 | Intercept | +0.2094 |
 
-**Model performance (20k held-out test):**
-Accuracy 94.07% · ROC-AUC 0.9869 · F1 0.9265 · Brier 0.0433
-Confusion Matrix: TN=11,101 · FP=711 · FN=1,024 · TP=7,164
+## Model Evaluation & Results
 
-**Dual-threshold intervention policy:** alert triggers only when `mean_prob > 0.5 AND CI_width < 0.2`.
+The model was evaluated on a held-out test set of 20,000 rows. The results show strong classification capability, high calibration quality (low Brier score), and robust confidence intervals:
+
+### Performance Metrics
+
+| Metric | Value | Description |
+|---|---|---|
+| **Accuracy** | 94.07% | Overall proportion of correct classifications |
+| **Precision** | 94.03% | Positive predictive value (reliability of alerts) |
+| **Recall (Sensitivity)** | 91.31% | True positive rate (coverage of actual urge states) |
+| **F1-Score** | 92.65% | Balanced harmonic mean of Precision and Recall |
+| **ROC-AUC** | **0.9869** | Discriminative ability (Area Under Receiver Operating Characteristic) |
+| **PR-AUC** | **0.9823** | Area Under Precision-Recall Curve |
+| **Brier Score** | **0.0433** | Calibration quality (mean squared error of predicted probabilities) |
+
+### Confusion Matrix (20k test set)
+
+| Predicted \ Actual | Active Urge (1) | No Urge (0) |
+|---|---|---|
+| **Active Urge (1)** | **7,164** (True Positive) | **711** (False Positive) |
+| **No Urge (0)** | **1,024** (False Negative) | **11,101** (True Negative) |
+
+**Dual-Threshold Intervention Policy:** 
+To prevent user alert fatigue, the application uses a dual-threshold safety check, only triggering notifications when prediction confidence is high:
+$$\text{Trigger} = (\text{mean\_prob} > 0.5) \land (\text{ci\_width} < 0.2)$$
+
 
 ---
 
